@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    run: forgerock
+  name: forgerock
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      run: forgerock
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: forgerock
+    spec:
+      containers:
+        - image: elminestrone/go-stock-api:1.0
+          name: forgerock
+          envFrom:
+            - configMapRef:
+                name: forgerock
+            - secretRef:
+                name: forgerock
+          ports:
+            - name: web
+              containerPort: 9000
+              protocol: TCP
+          resources: {}
+status: {}

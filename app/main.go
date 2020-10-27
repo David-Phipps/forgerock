@@ -10,7 +10,7 @@ import (
 	"strconv"
 )
 
-// sorts the Time series date keys
+// sorts the JSON Time Series date keys
 func CustomSort(s map[string]interface{}) []string {
 	keys := make([]string, 0, len(s))
 	for k := range s {
@@ -47,10 +47,6 @@ func ParseJSON(keys []string, prices map[string]interface{}, childKey string) fl
 }
 
 func main() {
-	os.Setenv("STOCK", "MSFT")
-	os.Setenv("DAYS", "3")
-	os.Setenv("API_KEY", "C227WD9W3LUVKVV9")
-
 	var baseURL string = "https://www.alphavantage.co/query?"
 	var combinedURL string = baseURL + "apikey=" + (os.Getenv("API_KEY")) + "&function=TIME_SERIES_DAILY_ADJUSTED&symbol=" + os.Getenv("STOCK")
 
