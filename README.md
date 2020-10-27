@@ -39,3 +39,9 @@ And we get back:
 ```
 The 3 day average closing price of MSFT is 213.73
 ```
+Hopefully the stock is flying high and your making tons of money and you can finally buy that diamond encrusted bluetooth headset you've always wanted![](https://coolmaterial.com/wp-content/uploads/2009/03/diamond-bluetooth.jpg)
+
+Finally to clean up our deployment in kubernetes run:
+```
+kubectl delete -f manifests/
+```
